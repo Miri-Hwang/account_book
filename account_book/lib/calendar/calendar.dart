@@ -53,6 +53,7 @@ class _AccountCalendarState extends State<AccountCalendar> {
           child: Container(
             color: Colors.white,
             child: TableCalendar(
+              headerVisible: false,
               firstDay: DateTime.utc(2010, 10, 16),
               lastDay: DateTime.utc(2030, 3, 14),
               focusedDay: DateTime.now(),
