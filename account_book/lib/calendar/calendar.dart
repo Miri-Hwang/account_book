@@ -5,6 +5,7 @@ import '../bottom_icons.dart';
 import 'components/app_bar_date.dart';
 
 
+
 class Calendar extends StatefulWidget {
   Calendar({Key? key, }) : super(key: key);
 
@@ -42,6 +43,7 @@ class AccountCalendar extends StatefulWidget {
 }
 
 class _AccountCalendarState extends State<AccountCalendar> {
+
   @override
   Widget build(BuildContext context) {
 
@@ -59,6 +61,7 @@ class _AccountCalendarState extends State<AccountCalendar> {
               firstDay: DateTime.utc(2010, 10, 16),
               lastDay: DateTime.utc(2030, 3, 14),
               focusedDay: DateTime.now(),
+                locale: Localizations.localeOf(context).languageCode
             ),
           )),
         // Calendar Tabs
