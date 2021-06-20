@@ -1,6 +1,7 @@
 import 'package:account_book/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import '../bottom_icons.dart';
+import 'components/app_bar_date.dart';
 
 
 class Calendar extends StatefulWidget {
@@ -30,58 +31,7 @@ class _CalendarState extends State<Calendar> {
   }
 }
 
-class CalendarAppbarDate extends StatefulWidget {
-  CalendarAppbarDate({Key? key}) : super(key: key);
 
-  @override
-  _CalendarAppbarDateState createState() => _CalendarAppbarDateState();
-}
-
-class _CalendarAppbarDateState extends State<CalendarAppbarDate> {
-  var _selectedDate = '2021.06';
-  @override
-  Widget build(BuildContext context) {
-
-    return Row(
-      children: [
-        Container(
-          width: 120,
-          decoration: BoxDecoration(
-            color: pink,
-            borderRadius: BorderRadius.only(topRight: Radius.circular(10.0),bottomRight:Radius.circular(10.0),),
-            boxShadow: [
-              BoxShadow(
-                color: Color.fromRGBO(0, 0, 0, 0.2),
-                offset: Offset(0.0, 5.0), //(x,y)
-                blurRadius: 10.0,
-              ),//BoxShadow
-            ],
-          ),
-          margin: EdgeInsets.fromLTRB(0, 15, 0, 15),
-          padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(_selectedDate,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-              Icon(
-                Icons.arrow_drop_down_sharp,
-                color: Colors.white,
-                size: 30.0,
-              )
-            ],
-          ),
-        )
-      ],
-    );
-  }
-}
 
 class AccountCalendar extends StatefulWidget {
   AccountCalendar({Key? key}) : super(key: key);
@@ -154,27 +104,3 @@ class _AccountCalendarState extends State<AccountCalendar> {
   }
 }
 
-class BottomIcons extends StatefulWidget {
-  BottomIcons({Key? key}) : super(key: key);
-
-  @override
-  _BottomIconsState createState() => _BottomIconsState();
-}
-
-class _BottomIconsState extends State<BottomIcons> {
-  @override
-  Widget build(BuildContext context) {
-
-    return Container(
-      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          SvgPicture.asset('assets/note.svg',width: 30,height: 30,),
-          SvgPicture.asset('assets/calendar.svg',width: 30,height: 30,),
-          SvgPicture.asset('assets/setting.svg',width: 30,height: 30,),
-        ],
-      ),
-    );
-  }
-}
