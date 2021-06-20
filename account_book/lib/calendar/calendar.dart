@@ -51,8 +51,10 @@ class _AccountCalendarState extends State<AccountCalendar> {
         Expanded(
           flex: 85,
           child: Container(
+            padding: const EdgeInsets.only(top: 22, left: 16, right: 16),
             color: Colors.white,
             child: TableCalendar(
+              startingDayOfWeek: StartingDayOfWeek.monday,
               headerVisible: false,
               firstDay: DateTime.utc(2010, 10, 16),
               lastDay: DateTime.utc(2030, 3, 14),
