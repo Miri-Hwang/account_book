@@ -63,7 +63,16 @@ class _AccountCalendarState extends State<AccountCalendar> {
               focusedDay: DateTime.now(),
                 locale: Localizations.localeOf(context).languageCode,
               rowHeight: 60,
-                daysOfWeekHeight : 20
+                daysOfWeekHeight : 20,
+              calendarStyle: CalendarStyle(
+                outsideDaysVisible: false,
+                weekendTextStyle: TextStyle().copyWith(color: Colors.red),
+              ),
+              daysOfWeekStyle: DaysOfWeekStyle(
+                weekendStyle: TextStyle().copyWith(color: Colors.red, fontWeight: FontWeight.bold),
+                weekdayStyle: TextStyle().copyWith(fontWeight: FontWeight.bold)
+              ),
+
             ),
           )),
         // Calendar Tabs
