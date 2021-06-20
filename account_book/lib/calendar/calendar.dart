@@ -1,5 +1,6 @@
 import 'package:account_book/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 import '../bottom_icons.dart';
 import 'components/app_bar_date.dart';
 
@@ -46,11 +47,18 @@ class _AccountCalendarState extends State<AccountCalendar> {
 
     return Row(
       children: [
+        // Calendar
         Expanded(
           flex: 85,
           child: Container(
             color: Colors.white,
+            child: TableCalendar(
+              firstDay: DateTime.utc(2010, 10, 16),
+              lastDay: DateTime.utc(2030, 3, 14),
+              focusedDay: DateTime.now(),
+            ),
           )),
+        // Calendar Tabs
         Expanded(
           flex: 15,
           child: Container(
