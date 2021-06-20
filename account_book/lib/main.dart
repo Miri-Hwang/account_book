@@ -1,3 +1,5 @@
+import 'package:account_book/calendar.dart';
+import 'package:account_book/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,29 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
       ),
-      home: MyHomePage(),
+      home: Calendar(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, }) : super(key: key);
 
-
-
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-
-      body: Container()
-    );
-  }
-}
