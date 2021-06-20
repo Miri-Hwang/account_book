@@ -61,7 +61,9 @@ class _AccountCalendarState extends State<AccountCalendar> {
               firstDay: DateTime.utc(2010, 10, 16),
               lastDay: DateTime.utc(2030, 3, 14),
               focusedDay: DateTime.now(),
-                locale: Localizations.localeOf(context).languageCode
+                locale: Localizations.localeOf(context).languageCode,
+              rowHeight: 60,
+                daysOfWeekHeight : 20
             ),
           )),
         // Calendar Tabs
