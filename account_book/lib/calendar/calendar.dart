@@ -15,6 +15,8 @@ class Calendar extends StatefulWidget {
 
 class _CalendarState extends State<Calendar> {
 
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -43,6 +45,9 @@ class AccountCalendar extends StatefulWidget {
 }
 
 class _AccountCalendarState extends State<AccountCalendar> {
+  DateTime currentDate = DateTime.now();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -60,12 +65,12 @@ class _AccountCalendarState extends State<AccountCalendar> {
               headerVisible: false,
               firstDay: DateTime.utc(2010, 10, 16),
               lastDay: DateTime.utc(2030, 3, 14),
-              focusedDay: DateTime.now(),
+              focusedDay: currentDate,
                 locale: Localizations.localeOf(context).languageCode,
               rowHeight: 60,
                 daysOfWeekHeight : 20,
               calendarStyle: CalendarStyle(
-                outsideDaysVisible: false,
+                outsideDaysVisible: true,
                 weekendTextStyle: TextStyle().copyWith(color: Colors.red),
               ),
               daysOfWeekStyle: DaysOfWeekStyle(
@@ -81,9 +86,9 @@ class _AccountCalendarState extends State<AccountCalendar> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              calendarButton("\n이\n전\n달\n"),
+              calendarButton("\n이\n전\n달\n", false),
               SizedBox(height: 10,),
-              calendarButton("\n다\n음\n달\n"),
+              calendarButton("\n다\n음\n달\n", true),
 
 
             ],
@@ -93,14 +98,21 @@ class _AccountCalendarState extends State<AccountCalendar> {
     );
   }
 
-  TextButton calendarButton(String text) {
+  TextButton calendarButton(String text, bool isNext) {
     return TextButton(
                 style: TextButton.styleFrom(
                   backgroundColor: pink,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(10),bottomRight: Radius.circular(10)))
 
                 ),
-                onPressed: (){},
+                onPressed: (){
+                  setState(() {
+                    isNext?
+                    currentDate = DateTime.utc(currentDate.year, currentDate.month+1, currentDate.day):
+                    currentDate = DateTime.utc(currentDate.year, currentDate.month-1, currentDate.day)
+                    ;
+                  });
+                },
                 child: Text(
                     text,style: TextStyle(color: Colors.white,fontWeight: FontWeight.w800),
                 ),
