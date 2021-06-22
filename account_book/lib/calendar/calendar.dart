@@ -78,54 +78,33 @@ class _AccountCalendarState extends State<AccountCalendar> {
         // Calendar Tabs
         Expanded(
           flex: 15,
-          child: Container(
-            padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.fromLTRB(0, 15, 0, 15),
-                  padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
-                  decoration: BoxDecoration(
-                    color: pink,
-                    borderRadius: BorderRadius.only(topRight: Radius.circular(10.0),bottomRight:Radius.circular(10.0),),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color.fromRGBO(0, 0, 0, 0.2),
-                        offset: Offset(0.0, 5.0), //(x,y)
-                        blurRadius: 10.0,
-                      ),//BoxShadow
-                    ],
-                  ),
-                  
-                  child: Text(
-                      "이전달",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w800),
-                  ),
-                ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              calendarButton("\n이\n전\n달\n"),
+              SizedBox(height: 10,),
+              calendarButton("\n다\n음\n달\n"),
 
-                Container(
-                  margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
-                  decoration: BoxDecoration(
-                    color: pink,
-                    borderRadius: BorderRadius.only(topRight: Radius.circular(10.0),bottomRight:Radius.circular(10.0),),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color.fromRGBO(0, 0, 0, 0.2),
-                        offset: Offset(0.0, 5.0), //(x,y)
-                        blurRadius: 10.0,
-                      ),//BoxShadow
-                    ],
-                  ),
 
-                  child: Text(
-                    "다음달",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w800),
-                  ),
-                ),
-              ],
-            ),
-          ))
+            ],
+          )),
+
       ],
     );
+  }
+
+  TextButton calendarButton(String text) {
+    return TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: pink,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(10),bottomRight: Radius.circular(10)))
+
+                ),
+                onPressed: (){},
+                child: Text(
+                    text,style: TextStyle(color: Colors.white,fontWeight: FontWeight.w800),
+                ),
+              );
   }
 }
 
