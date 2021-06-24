@@ -10,7 +10,7 @@ class CalendarAppbarDate extends StatefulWidget {
 }
 
 class _CalendarAppbarDateState extends State<CalendarAppbarDate> {
-  var _selectedDate = '2021.06';
+  var _selectedMonth = '2021.06';
   @override
   Widget build(BuildContext context) {
 
@@ -35,7 +35,7 @@ class _CalendarAppbarDateState extends State<CalendarAppbarDate> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(_selectedDate,
+              Text(_selectedMonth,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 15.0,
