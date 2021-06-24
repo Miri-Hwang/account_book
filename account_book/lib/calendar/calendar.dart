@@ -1,6 +1,6 @@
 import 'package:account_book/constants.dart';
 import 'package:flutter/material.dart';
-import '../bottom_icons.dart';
+import '../components/bottom_icons.dart';
 import 'components/app_bar_date.dart';
 
 
@@ -56,10 +56,12 @@ class _AccountCalendarState extends State<AccountCalendar> {
           child: Container(
             padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   margin: EdgeInsets.fromLTRB(0, 15, 0, 15),
                   padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
+                  width: 40,
                   decoration: BoxDecoration(
                     color: pink,
                     borderRadius: BorderRadius.only(topRight: Radius.circular(10.0),bottomRight:Radius.circular(10.0),),
@@ -80,6 +82,7 @@ class _AccountCalendarState extends State<AccountCalendar> {
                 Container(
                   margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
                   padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
+                  width: 40,
                   decoration: BoxDecoration(
                     color: pink,
                     borderRadius: BorderRadius.only(topRight: Radius.circular(10.0),bottomRight:Radius.circular(10.0),),
@@ -103,4 +106,3 @@ class _AccountCalendarState extends State<AccountCalendar> {
     );
   }
 }
-
