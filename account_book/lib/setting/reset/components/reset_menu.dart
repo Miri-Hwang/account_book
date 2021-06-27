@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 
 
-class BackupMenu extends StatelessWidget {
+class ResetMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +33,11 @@ class BackupMenu extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    SettingMenuAppbar(text:"내보내기"),
+                    SettingMenuAppbar(text:"초기화"),
                     Divider(color: orange,),
-                    SettingMenuListItem("메일로 액셀데이터 내보내기"),
+                    SettingMenuListItem("전체 초기화"),
                     Divider(color: orange,),
-                    SettingMenuListItem("카카오톡으로 엑셀데이터 내보내기"),
+                    SettingMenuListItem("가계부 내역만 초기화"),
                     Divider(color: orange,),
                     Container(
                         margin: EdgeInsets.only(top: 20),

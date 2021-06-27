@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 
 
 class SettingMenuAppbar extends StatelessWidget {
-  SettingMenuAppbar(var text){
+  SettingMenuAppbar({var text,var color=pink}){
     this.text = text;
+    this.color= color;
   }
   var text;
+  var color;
   @override
   Widget build(BuildContext context) {
 
@@ -16,7 +18,7 @@ class SettingMenuAppbar extends StatelessWidget {
         Container(
           width: 150,
           decoration: BoxDecoration(
-            color: pink,
+            color: color,
             borderRadius: BorderRadius.only(topRight: Radius.circular(10.0),bottomRight:Radius.circular(10.0),),
             boxShadow: [
               BoxShadow(
@@ -27,7 +29,7 @@ class SettingMenuAppbar extends StatelessWidget {
             ],
           ),
           margin: EdgeInsets.fromLTRB(0, 15, 0, 15),
-          padding: EdgeInsets.fromLTRB(5, 5, 50, 5),
+          padding: EdgeInsets.fromLTRB(20, 5, 50, 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,

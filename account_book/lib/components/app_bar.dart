@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 
 
 class AccountAppBar extends StatelessWidget {
-  AccountAppBar(var text){
+  AccountAppBar({var text,var color = pink}){
     this.text = text;
+    this.color = color;
   }
+  var color;
   var text;
   @override
   Widget build(BuildContext context) {
@@ -14,13 +16,13 @@ class AccountAppBar extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 150,
+          width: 170,
           decoration: BoxDecoration(
-            color: pink,
+            color: color,
             borderRadius: BorderRadius.only(topRight: Radius.circular(10.0),bottomRight:Radius.circular(10.0),),
             boxShadow: [
               BoxShadow(
-                color: Color.fromRGBO(0, 0, 0, 0.2),
+                color: Color.fromRGBO(0, 0, 0, 0.1),
                 offset: Offset(0.0, 5.0), //(x,y)
                 blurRadius: 10.0,
               ),//BoxShadow

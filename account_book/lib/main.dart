@@ -1,7 +1,10 @@
 import 'package:account_book/calendar/calendar.dart';
 import 'package:account_book/constants.dart';
 import 'package:account_book/setting/backup/backup.dart';
+import 'package:account_book/setting/money_setting/money_setting.dart';
+import 'package:account_book/setting/reset/reset.dart';
 import 'package:account_book/setting/setting.dart';
+import 'package:account_book/setting/thema/thema.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
       ),
-      home: Setting(),
+      home: Thema(),
     );
   }
 }

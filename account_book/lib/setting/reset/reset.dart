@@ -1,22 +1,19 @@
-
-
 import 'package:account_book/components/app_bar.dart';
+import 'package:account_book/components/bottom_icons.dart';
 import 'package:account_book/constants.dart';
-import 'package:account_book/setting/components/setting_menu.dart';
-import 'package:account_book/setting/thema/components/thema_menu.dart';
+import 'package:account_book/setting/reset/components/reset_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../components/bottom_icons.dart';
 
 
 
-class Setting extends StatefulWidget {
-  Setting({Key? key, }) : super(key: key);
+class Reset extends StatefulWidget {
+  Reset({Key? key, }) : super(key: key);
   @override
-  _SettingState createState() => _SettingState();
+  _ResetState createState() => _ResetState();
 }
 
-class _SettingState extends State<Setting> {
+class _ResetState extends State<Reset> {
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +23,8 @@ class _SettingState extends State<Setting> {
           decoration: backgroundGradient,
           child: Column(
             children: [
-              Expanded(child: AccountAppBar(text:"설정"),flex: 1,),
-              Expanded(child: ThemaMenu(),flex: 8,),
+              Expanded(child: AccountAppBar(text:"초기화"),flex: 1,),
+              Expanded(child: ResetMenu(),flex: 8,),
               Expanded(child: BottomIcons(),flex: 1,),
             ],
           ),
@@ -35,3 +32,4 @@ class _SettingState extends State<Setting> {
     );
   }
 }
+

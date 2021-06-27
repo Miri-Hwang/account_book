@@ -14,8 +14,7 @@ class SettingMenuListItem extends StatelessWidget {
     return Row(
       children: [
         Container(
-          margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
-          padding: EdgeInsets.fromLTRB(8, 8, 0, 8),
+          padding: EdgeInsets.fromLTRB(8, 4, 0, 4),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

@@ -23,7 +23,7 @@ class _CalendarAppbarDateState extends State<CalendarAppbarDate> {
             borderRadius: BorderRadius.only(topRight: Radius.circular(10.0),bottomRight:Radius.circular(10.0),),
             boxShadow: [
               BoxShadow(
-                color: Color.fromRGBO(0, 0, 0, 0.2),
+                color: Color.fromRGBO(0, 0, 0, 0.1),
                 offset: Offset(0.0, 5.0), //(x,y)
                 blurRadius: 10.0,
               ),//BoxShadow

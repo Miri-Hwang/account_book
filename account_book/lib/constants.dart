@@ -17,3 +17,10 @@ const light_navy = Color.fromRGBO(119, 139, 235, 1);
 const backgroundGradient=BoxDecoration(
         gradient: LinearGradient(begin: Alignment.topCenter,end: Alignment.bottomCenter,colors: [orange,orange2])
     );
+
+
+const KRW = 'KRW - korea(₩)';
+const JPY = 'JPY - Japan(¥)';
+const USD = "USD - USA(\$)";
+const CNY = "CNY - China(¥)";
+const EUR = "EUR - Europe(€)";
