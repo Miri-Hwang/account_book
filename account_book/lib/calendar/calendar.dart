@@ -65,7 +65,9 @@ class _AccountCalendarState extends State<AccountCalendar> {
               headerVisible: false,
               firstDay: DateTime.utc(2010, 10, 16),
               lastDay: DateTime.utc(2030, 3, 14),
+              selectedDayPredicate: (day)=>isSameDay(day, currentDate),
               focusedDay: currentDate,
+
                 locale: Localizations.localeOf(context).languageCode,
               rowHeight: 60,
                 daysOfWeekHeight : 20,
@@ -108,9 +110,12 @@ class _AccountCalendarState extends State<AccountCalendar> {
                 onPressed: (){
                   setState(() {
                     isNext?
+                   // next month
                     currentDate = DateTime.utc(currentDate.year, currentDate.month+1, currentDate.day):
+                   // previous month
                     currentDate = DateTime.utc(currentDate.year, currentDate.month-1, currentDate.day)
                     ;
+                    print(currentDate);
                   });
                 },
                 child: Text(
