@@ -24,7 +24,7 @@ class _BackupState extends State<Backup> {
           decoration: backgroundGradient,
           child: Column(
             children: [
-              Expanded(child: AccountAppBar("백업 / 복원"),flex: 1,),
+              Expanded(child: AccountAppBar(text:"백업 / 복원"),flex: 1,),
               Expanded(child: BackupMenu(),flex: 8,),
               Expanded(child: BottomIcons(),flex: 1,),
             ],

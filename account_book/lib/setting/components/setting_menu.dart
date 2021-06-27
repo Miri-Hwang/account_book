@@ -1,4 +1,3 @@
-import 'package:account_book/constants.dart';
 import 'package:account_book/setting/components/setting_items.dart';
 import 'package:flutter/material.dart';
 
