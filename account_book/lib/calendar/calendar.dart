@@ -97,7 +97,9 @@ class _AccountCalendarState extends State<AccountCalendar> {
                   context.read<CurrentDate>().setSelectedDate(focusedDay);
                 });
               },
-
+              onPageChanged: (date){
+                context.read<CurrentDate>().setSelectedDate(date);
+              },
               focusedDay: _currentDate.getDate,
 
                 locale: Localizations.localeOf(context).languageCode,
