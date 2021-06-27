@@ -48,7 +48,6 @@ class AccountCalendar extends StatefulWidget {
 }
 
 class _AccountCalendarState extends State<AccountCalendar> {
-  DateTime currentDate = DateTime.now();
 
 
   @override
@@ -68,10 +67,8 @@ class _AccountCalendarState extends State<AccountCalendar> {
             isNext?
             // next month
             context.read<CurrentDate>().setNextMonth():
+                //previous month
                 context.read<CurrentDate>().setPreviousMonth()
-            // currentDate = DateTime.utc(currentDate.year, currentDate.month+1, currentDate.day):
-            // previous month
-            // currentDate = DateTime.utc(currentDate.year, currentDate.month-1, currentDate.day)
             ;
 
           });

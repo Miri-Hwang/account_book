@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../constants.dart';
+import '../date.dart';
 
 class CalendarAppbarDate extends StatefulWidget {
 
@@ -11,10 +13,11 @@ class CalendarAppbarDate extends StatefulWidget {
 }
 
 class _CalendarAppbarDateState extends State<CalendarAppbarDate> {
+
   var _selectedMonth = '2021.06';
   @override
   Widget build(BuildContext context) {
-
+    CurrentDate _currentDate = Provider.of<CurrentDate>(context);
     return Row(
       children: [
         Container(
@@ -36,7 +39,7 @@ class _CalendarAppbarDateState extends State<CalendarAppbarDate> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(_selectedMonth,
+              Text('${_currentDate.getDate.year} - ${_currentDate.getDate.month}',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 15.0,
