@@ -46,6 +46,14 @@ class AccountCalendar extends StatefulWidget {
 
 class _AccountCalendarState extends State<AccountCalendar> {
   DateTime currentDate = DateTime.now();
+  DateTime _selectedDay = DateTime.now();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+  }
 
 
 
@@ -66,6 +74,12 @@ class _AccountCalendarState extends State<AccountCalendar> {
               firstDay: DateTime.utc(2010, 10, 16),
               lastDay: DateTime.utc(2030, 3, 14),
               selectedDayPredicate: (day)=>isSameDay(day, currentDate),
+              onDaySelected: (selectedDay, focusedDay){
+                setState(() {
+                  _selectedDay = selectedDay;
+                 currentDate = focusedDay;
+                });
+              },
               focusedDay: currentDate,
 
                 locale: Localizations.localeOf(context).languageCode,
@@ -115,7 +129,7 @@ class _AccountCalendarState extends State<AccountCalendar> {
                    // previous month
                     currentDate = DateTime.utc(currentDate.year, currentDate.month-1, currentDate.day)
                     ;
-                    print(currentDate);
+
                   });
                 },
                 child: Text(
