@@ -46,14 +46,7 @@ class AccountCalendar extends StatefulWidget {
 
 class _AccountCalendarState extends State<AccountCalendar> {
   DateTime currentDate = DateTime.now();
-  DateTime _selectedDay = DateTime.now();
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-  }
 
 
 
@@ -76,7 +69,7 @@ class _AccountCalendarState extends State<AccountCalendar> {
               selectedDayPredicate: (day)=>isSameDay(day, currentDate),
               onDaySelected: (selectedDay, focusedDay){
                 setState(() {
-                  _selectedDay = selectedDay;
+                  // _selectedDay = selectedDay;
                  currentDate = focusedDay;
                 });
               },
