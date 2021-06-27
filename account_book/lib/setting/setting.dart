@@ -27,7 +27,7 @@ class _SettingState extends State<Setting> {
           child: Column(
             children: [
               Expanded(child: AccountAppBar(text:"설정"),flex: 1,),
-              Expanded(child: ThemaMenu(),flex: 8,),
+              Expanded(child: SettingMenu(),flex: 8,),
               Expanded(child: BottomIcons(),flex: 1,),
             ],
           ),

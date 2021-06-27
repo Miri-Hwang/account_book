@@ -1,3 +1,6 @@
+import 'package:account_book/calendar/calendar.dart';
+import 'package:account_book/setting/components/setting_menu.dart';
+import 'package:account_book/setting/setting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -17,9 +20,26 @@ class _BottomIconsState extends State<BottomIcons> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          SvgPicture.asset('assets/note.svg',width: 30,height: 30,),
-          SvgPicture.asset('assets/calendar.svg',width: 30,height: 30,),
-          SvgPicture.asset('assets/setting.svg',width: 30,height: 30,),
+          GestureDetector(
+              onTap:(){},
+              child: SvgPicture.asset('assets/note.svg',width: 30,height: 30,)),
+          GestureDetector(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Calendar()),
+                );
+              },
+              child: SvgPicture.asset('assets/calendar.svg',width: 30,height: 30,)),
+          GestureDetector
+
+            (onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Setting()),
+            );
+          },
+    child: SvgPicture.asset('assets/setting.svg',width: 30,height: 30,)),
         ],
       ),
     );
