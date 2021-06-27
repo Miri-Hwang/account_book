@@ -8,9 +8,18 @@ import 'package:account_book/setting/thema/thema.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+
+import 'calendar/date.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+      MultiProvider(providers: [
+        ChangeNotifierProvider(create: (_)=>CurrentDate()),
+
+      ],
+      child: MyApp(),)
+      );
 }
 
 class MyApp extends StatelessWidget {

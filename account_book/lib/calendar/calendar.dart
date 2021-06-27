@@ -1,8 +1,10 @@
 import 'package:account_book/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../components/bottom_icons.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'components/app_bar_date.dart';
+import 'date.dart';
 
 
 
@@ -37,6 +39,7 @@ class _CalendarState extends State<Calendar> {
 
 
 
+
 class AccountCalendar extends StatefulWidget {
   AccountCalendar({Key? key}) : super(key: key);
 
@@ -48,11 +51,36 @@ class _AccountCalendarState extends State<AccountCalendar> {
   DateTime currentDate = DateTime.now();
 
 
-
-
   @override
   Widget build(BuildContext context) {
 
+    CurrentDate _currentDate = Provider.of<CurrentDate>(context);
+
+    TextButton calendarButton(String text, bool isNext) {
+      return TextButton(
+        style: TextButton.styleFrom(
+            backgroundColor: pink,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(10),bottomRight: Radius.circular(10)))
+
+        ),
+        onPressed: (){
+          setState(() {
+            isNext?
+            // next month
+            context.read<CurrentDate>().setNextMonth():
+                context.read<CurrentDate>().setPreviousMonth()
+            // currentDate = DateTime.utc(currentDate.year, currentDate.month+1, currentDate.day):
+            // previous month
+            // currentDate = DateTime.utc(currentDate.year, currentDate.month-1, currentDate.day)
+            ;
+
+          });
+        },
+        child: Text(
+          text,style: TextStyle(color: Colors.white,fontWeight: FontWeight.w800),
+        ),
+      );
+    }
     return Row(
       children: [
         // Calendar
@@ -66,14 +94,14 @@ class _AccountCalendarState extends State<AccountCalendar> {
               headerVisible: false,
               firstDay: DateTime.utc(2010, 10, 16),
               lastDay: DateTime.utc(2030, 3, 14),
-              selectedDayPredicate: (day)=>isSameDay(day, currentDate),
+              selectedDayPredicate: (day)=>isSameDay(day, _currentDate.getDate),
               onDaySelected: (selectedDay, focusedDay){
                 setState(() {
-                  // _selectedDay = selectedDay;
-                 currentDate = focusedDay;
+                  context.read<CurrentDate>().setSelectedDate(focusedDay);
                 });
               },
-              focusedDay: currentDate,
+
+              focusedDay: _currentDate.getDate,
 
                 locale: Localizations.localeOf(context).languageCode,
               rowHeight: 60,
@@ -105,29 +133,8 @@ class _AccountCalendarState extends State<AccountCalendar> {
 
       ],
     );
+
   }
 
-  TextButton calendarButton(String text, bool isNext) {
-    return TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: pink,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(10),bottomRight: Radius.circular(10)))
 
-                ),
-                onPressed: (){
-                  setState(() {
-                    isNext?
-                   // next month
-                    currentDate = DateTime.utc(currentDate.year, currentDate.month+1, currentDate.day):
-                   // previous month
-                    currentDate = DateTime.utc(currentDate.year, currentDate.month-1, currentDate.day)
-                    ;
-
-                  });
-                },
-                child: Text(
-                    text,style: TextStyle(color: Colors.white,fontWeight: FontWeight.w800),
-                ),
-              );
-  }
 }
