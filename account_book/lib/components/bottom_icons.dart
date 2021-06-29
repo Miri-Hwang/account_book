@@ -1,4 +1,4 @@
-import 'package:account_book/calendar/calendar.dart';
+import 'package:account_book/calendar/calendar_main.dart';
 import 'package:account_book/setting/components/setting_menu.dart';
 import 'package:account_book/setting/setting.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class _BottomIconsState extends State<BottomIcons> {
               onTap: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Calendar()),
+                  MaterialPageRoute(builder: (context) => CalendarMain()),
                 );
               },
               child: SvgPicture.asset('assets/calendar.svg',width: 30,height: 30,)),
